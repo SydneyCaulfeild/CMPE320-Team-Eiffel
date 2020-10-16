@@ -1,5 +1,5 @@
 /*
- * That is the head file for address
+ * That is the header file for address
  */
 
 #pragma once
