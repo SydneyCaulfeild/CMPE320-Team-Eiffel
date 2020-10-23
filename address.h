@@ -7,27 +7,34 @@
 #include<iostream>
 #include <string>
 
+
 using namespace std;
 
-class Address{
+class Address {
 
 public:
 
 	Address(); //Default Constructor
-	Address(string longtitude, string lattitude, string addressName); //Constructor
-	string getLongtitude()const; //Accessor to return longtitude
-	string getLattitude()const; //Accessor to return lattitude
-	string getAddressName()const; //Accessor to return address name
+	Address(string longitude, string latitude, string addressName); //Constructor
+	string getLongitude(); //Accessor to return longitude
+	string getLatitude(); //Accessor to return latitude
+	string getAddressName(); //Accessor to return address name
 
-	void setLongtitude(string longtitude); //Mutator to set the longtitude
-	void setLattitude(string lattitude); //Mutator to set the lattitude
+	void setLongitude(string longitude); //Mutator to set the longitude
+	void setLatitude(string latitude); //Mutator to set the latitude
 	void setAddressName(string addressName); //Mutator to set the address name
 
 	double calculateDistance(const Address& address1, const Address& address2); //Method to calculate the distance between the two addresses
-	void printAddress(string longtitude, string lattitude, string addressName); //Method to print address
+	void printAddress(string longitude, string latitude, string addressName); //Method to print address
+
+
+	long double toRadians(const long double);// Utility function for converting degrees to radians
+	float calculateDistance(float longitude, float latitude, float myLongitude, float myLatitude);// Method that calculates the distance between 2 points with coordinates (longitude, latitude)
+
+	bool deleteAddress(string address);// Delete address method
 
 private:
-	string longtitude;
-	string lattitude;
+	string longitude;
+	string latitude;
 	string addressName;
 };
