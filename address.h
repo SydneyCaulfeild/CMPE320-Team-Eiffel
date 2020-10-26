@@ -24,13 +24,10 @@ public:
 	void setLatitude(string latitude); //Mutator to set the latitude
 	void setAddressName(string addressName); //Mutator to set the address name
 
-	double calculateDistance(const Address& address1, const Address& address2); //Method to calculate the distance between the two addresses
 	void printAddress(string longitude, string latitude, string addressName); //Method to print address
-
 
 	long double toRadians(const long double);// Utility function for converting degrees to radians
 	float calculateDistance(float longitude, float latitude, float myLongitude, float myLatitude);// Method that calculates the distance between 2 points with coordinates (longitude, latitude)
-
 	bool deleteAddress(string address);// Delete address method
 
 private:
