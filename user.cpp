@@ -13,6 +13,8 @@
 using namespace std;
 
 // constructors
+User::User() {}
+
 User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), indoor(false), internet(false), power(false), equipment(false), maxTravelDistance(-1)  {}
 
 User::User(int volume, Address currentLocation, bool indoor, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds) :

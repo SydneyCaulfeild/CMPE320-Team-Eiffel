@@ -15,6 +15,7 @@ class User {
 public:
 
 	// constructors
+	User(); //null instance
 	User(Login loginCreds);
 	User(int volume, Address currentLocation, bool indoor, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds);
 
