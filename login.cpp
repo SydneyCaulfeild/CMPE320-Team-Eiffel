@@ -28,3 +28,38 @@ void Login :: setUserName(string newUserName){
 void Login :: setPassword(string newPassword){
 	password = newPassword;
 }
+
+void Login::checkValidity(string enteredPassword)
+{
+	bool length = false, digit = false, upperCase = false, lowerCase = false;
+
+	if (enteredPassword.length() >= 7) {
+		length = true;
+	}
+
+	char password[enteredPassword.length()];
+	strcpy(password, enteredPassword.c_str());
+	for (int i = 0; i < enteredPassword.length(); i++) {
+		char c = password[i];
+		if (!digit && isdigit(c)) {
+			digit = true;
+			continue;
+		}
+
+		if (!upperCase && isupper(c)) {
+			upperCase = true;
+			continue;
+		}
+
+		if (!lowerCase && islower(c)) {
+			lowerCase = true;
+			continue;
+		}
+	}
+
+	cout << "Password Length : " << (length ? "Long Enough" : "Too Short");
+	cout << "Password contains digit ? : " << (digit ? "Yes" : "No");
+	cout << "Password contains upper case ? : " << (upperCase ? "Yes" : "No");
+	cout << "Password contains lower case ? : " << (lowerCase ? "Yes" : "No");
+
+}
