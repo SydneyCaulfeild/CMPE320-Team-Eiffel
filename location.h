@@ -24,7 +24,7 @@ public:
 	bool getInternet();
 	bool getPower();
 	bool getEquipment();
-	bool getIndoor();
+	string getInOrOut();
 	int getMaxCapacity();
 	int getCurrentCapacity();
 
@@ -32,21 +32,21 @@ public:
 	void setInternet(bool internet);
 	void setPower(bool power);
 	void setEquipment(bool equipment);
-	void setIndoor(bool indoor);
+	void setInOrOut(string inOrOut);
 	void setMaxCapacity(int maxCapacity);
 	void setCurrentCapacity(int currentCapacity);
 
 	// overridden less than operator for sorting
 	bool operator<(const Location& right);
 
-	void checkPreferences(User user);
+	bool checkPreferences(User user);
 
 private:
 
 	// attributes
 	int volume;
 	Address location;
-	bool indoor;
+	string inOrOut;
 	bool internet;
 	bool power;
 	bool equipment;
