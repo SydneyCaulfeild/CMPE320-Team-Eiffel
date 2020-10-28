@@ -16,6 +16,8 @@ public:
 	string getUserName()const; //Accessor to return userName
 	void setUserName(string userName); //Mutator to set the user name
 	void setPassword(string password); //Mutator to set the password
+	bool checkValidity(const string enteredPassword);
+
 
 private:
 	string userName;

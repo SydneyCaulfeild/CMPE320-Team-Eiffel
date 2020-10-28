@@ -13,41 +13,44 @@
 using namespace std;
 
 // constructors
-User :: User(){}
+User::User() {}
 
-User :: User(int volume, Address currentLocation, bool indoor, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds) :
-		volume(volume), currentLocation(currentLocation), indoor(indoor), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds){}
+User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), inOrOut("either"), internet(false), power(false), equipment(false), maxTravelDistance(-1)  {}
+
+User::User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds) :
+	volume(volume), currentLocation(currentLocation), inOrOut(inOrOut), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds) {}
 
 // accessors
-int User :: getVolume(){
+int User::getVolume() {
 	return volume;
 }
 
-Address User :: getCurrentLocation(){
+Address User::getCurrentLocation() {
 	return currentLocation;
 }
 
-bool User :: getInternet(){
+bool User::getInternet() {
 	return internet;
 }
 
-bool User :: getPower(){
+bool User::getPower() {
 	return power;
 }
 
-bool User :: getEquipment(){
+bool User::getEquipment() {
 	return equipment;
 }
 
-bool User :: getIndoor(){
-	return indoor;
+string User::getInOrOut() {
+	return inOrOut;
 }
 
-double User :: getMaxDistance(){
+double User::getMaxDistance() {
 	return maxTravelDistance;
 }
 
-Login User :: getLogin(){
+Login User::getLogin()
+{
 	return loginCreds;
 }
 
@@ -79,6 +82,6 @@ void User :: setPower(bool power){
 	this->power = power;
 }
 
-void User :: setInternet(bool internet){
+void User::setInternet(bool internet) {
 	this->internet = internet;
 }

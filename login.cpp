@@ -5,6 +5,9 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <bits/stdc++.h>
+
+
 
 using namespace std;
 
@@ -16,7 +19,7 @@ Login :: Login() : userName(), password(){}
 Login :: Login(const string& userName, const string& password) : userName(userName), password(password){}
 
 //Accessor
-string Login :: getUserName()const{
+string Login::getUserName()const {
 	return userName;
 }
 
@@ -61,5 +64,15 @@ void Login::checkValidity(string enteredPassword)
 	cout << "Password contains digit ? : " << (digit ? "Yes" : "No");
 	cout << "Password contains upper case ? : " << (upperCase ? "Yes" : "No");
 	cout << "Password contains lower case ? : " << (lowerCase ? "Yes" : "No");
+
+	if(length == true && digit == true && upperCase == true && lowerCase == true) {
+		valid = true;
+		cout << "Password is valid ? : " << (valid ? "Yes" : "No");
+		return true;
+	} else {
+		cout << "Password is valid ? : " << (valid ? "Yes" : "No");
+		return false;
+	}
+
 
 }
