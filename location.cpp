@@ -7,7 +7,7 @@
     * location: Address
     * maxCapacity: int
     * currentCapacity: int
-    * indoors: string
+    * inOrOut: string
     * internet: bool
     * volume: int
     * power: bool
@@ -16,7 +16,7 @@
     * checkPreferences(User):
     * getMaxCapacity(): int
     * getCurrentCapacity(): int
-    * getIndoors(): string
+    * getInOrOut(): string
     * getInternet():bool
     * getVolume(): int
     * getPower(): bool
@@ -24,7 +24,7 @@
     * getLocation(): string
     * seMaxCapacity():
     * setCurrentCapacity():
-    * setIndoors():
+    * setInOrOut():
     * setInternet():
     * setVolume():
     * setPower():
@@ -56,12 +56,12 @@ toDo
 using namespace std;
 
 // Constructors
-Location::Location() : volume(), location(), indoor(), internet(), power(), equipment(), maxCapacity(), currentCapacity() {}
-Location::Location(int volume, Address location, bool indoor, bool internet, bool power, bool equipment, int maxCapacity, int currentCapacity)
+Location::Location() : volume(), location(), inOrOut(), internet(), power(), equipment(), maxCapacity(), currentCapacity() {}
+Location::Location(int volume, Address location, string inOrOut, bool internet, bool power, bool equipment, int maxCapacity, int currentCapacity)
 {
     this->volume = volume;
     this->location = location;
-    this->indoor = indoor;
+    this->inOrOut = inOrOut;
     this->internet = internet;
     this->power = power;
     this->equipment = equipment;
@@ -89,8 +89,8 @@ bool Location::getEquipment() {
     return equipment;
 }
 
-bool Location::getIndoor() {
-    return indoor;
+string Location::getInOrOut() {
+    return inOrOut;
 }
 
 int Location::getMaxCapacity() {
@@ -115,9 +115,9 @@ void Location::setEquipment(bool equipment) {
     this->equipment = equipment;
 }
 
-void Location::setIndoor(bool indoor)
+void Location::setInOrOut(string inOrOut)
 {
-    this->indoor = indoor;
+    this->inOrOut = inOrOut;
 }
 
 void Location::setMaxCapacity(int maxCapacity)
@@ -130,11 +130,18 @@ void Location::setCurrentCapacity(int currentCapacity)
     this->currentCapacity = currentCapacity;
 }
 
+bool Location::operator<(const Location& right)
+{
+	Address addr1 = this->location;
+	Address addr2 = right.location;
+	return addr1.getLongitude() < addr2.getLongitude();
+}
+
 // Check user preferences method, returns true if the study spot is valid to add to the list
 bool Location::checkPreferences(User user) {
     //check all the boolean variables, statement is true if every variable matches
     if (user.getEquipment() == this->equipment
-        && user.getIndoor() == this->indoor
+        && user.getInOrOut() == this->inOrOut
         && user.getInternet() == this->internet
         && user.getPower() == this->power
         && user.getVolume() >= this->volume

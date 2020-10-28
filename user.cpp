@@ -15,10 +15,10 @@ using namespace std;
 // constructors
 User::User() {}
 
-User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), indoor(false), internet(false), power(false), equipment(false), maxTravelDistance(-1)  {}
+User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), inOrOut("either"), internet(false), power(false), equipment(false), maxTravelDistance(-1)  {}
 
-User::User(int volume, Address currentLocation, bool indoor, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds) :
-	volume(volume), currentLocation(currentLocation), indoor(indoor), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds) {}
+User::User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds) :
+	volume(volume), currentLocation(currentLocation), inOrOut(inOrOut), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds) {}
 
 // accessors
 int User::getVolume() {
@@ -41,8 +41,8 @@ bool User::getEquipment() {
 	return equipment;
 }
 
-bool User::getIndoor() {
-	return indoor;
+string User::getInOrOut() {
+	return inOrOut;
 }
 
 double User::getMaxDistance() {
@@ -70,8 +70,8 @@ void User::setMaxDistance(double maxTravelDistance) {
 	this->maxTravelDistance = maxTravelDistance;
 }
 
-void User::setIndoor(bool indoor) {
-	this->indoor = indoor;
+void User::setInOrOut(string inOrOut) {
+	this->inOrOut = inOrOut;
 }
 
 void User::setEquipment(bool equipment) {
