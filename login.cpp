@@ -32,7 +32,7 @@ void Login :: setPassword(string newPassword){
 	password = newPassword;
 }
 
-void Login::checkValidity(string enteredPassword)
+bool Login::checkValidity(string enteredPassword)
 {
 	bool length = false, digit = false, upperCase = false, lowerCase = false, valid = false;
 
