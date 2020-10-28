@@ -70,8 +70,8 @@ void User :: setMaxDistance(double maxTravelDistance){
 	this->maxTravelDistance = maxTravelDistance;
 }
 
-void User :: setIndoor(bool indoor){
-	this->indoor = indoor;
+void User::setInOrOut(string inOrOut) {
+	this->inOrOut = inOrOut;
 }
 
 void User :: setEquipment(bool equipment){

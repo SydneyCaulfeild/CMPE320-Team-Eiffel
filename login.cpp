@@ -34,7 +34,7 @@ void Login :: setPassword(string newPassword){
 
 void Login::checkValidity(string enteredPassword)
 {
-	bool length = false, digit = false, upperCase = false, lowerCase = false;
+	bool length = false, digit = false, upperCase = false, lowerCase = false, valid = false;
 
 	if (enteredPassword.length() >= 7) {
 		length = true;
