@@ -24,7 +24,7 @@ int main() {
 	Login eneteredCreds = Login(userName,password);
 	for (User const& i : users) {
 	    if(i.getLogin == eneteredCreds) {
-	    	User currentUser = i;	//Validates credentials and assigns instance to correct user
+	    	currentUser = i;	//Validates credentials and assigns instance to correct user
 	    }
 	}
 
