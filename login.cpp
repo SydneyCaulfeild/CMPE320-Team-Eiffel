@@ -8,14 +8,15 @@
 #include <bits/stdc++.h>
 
 
+
 using namespace std;
 
 #include "login.h"
 
 //Constructor
-Login::Login() : userName(), password() {}
+Login :: Login() : userName(), password(){}
 
-Login::Login(const string& userName, const string& password) : userName(userName), password(password) {}
+Login :: Login(const string& userName, const string& password) : userName(userName), password(password){}
 
 //Accessor
 string Login::getUserName()const {
@@ -23,15 +24,15 @@ string Login::getUserName()const {
 }
 
 //Mutator
-void Login::setUserName(string newUserName) {
+void Login :: setUserName(string newUserName){
 	userName = newUserName;
 }
 
-void Login::setPassword(string newPassword) {
+void Login :: setPassword(string newPassword){
 	password = newPassword;
 }
 
-bool Login::checkValidity(const string enteredPassword)
+bool Login::checkValidity(string enteredPassword)
 {
 	bool length = false, digit = false, upperCase = false, lowerCase = false, valid = false;
 
@@ -59,16 +60,17 @@ bool Login::checkValidity(const string enteredPassword)
 		}
 	}
 
-	cout << "Password Length : " << (length ? "Long Enough" : "Too Short");
-	cout << "Password contains digit ? : " << (digit ? "Yes" : "No");
-	cout << "Password contains upper case ? : " << (upperCase ? "Yes" : "No");
-	cout << "Password contains lower case ? : " << (lowerCase ? "Yes" : "No");
+	cout << "Password Length : " << (length ? "Long Enough" : "Too Short") << endl;
+	cout << "Password contains digit ? : " << (digit ? "Yes" : "No") << endl;
+	cout << "Password contains upper case ? : " << (upperCase ? "Yes" : "No") << endl;
+	cout << "Password contains lower case ? : " << (lowerCase ? "Yes" : "No") << endl;
+
 	if(length == true && digit == true && upperCase == true && lowerCase == true) {
 		valid = true;
-		cout << "Password is valid ? : " << (valid ? "Yes" : "No");
+		cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;
 		return true;
 	} else {
-		cout << "Password is valid ? : " << (valid ? "Yes" : "No");
+		cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;
 		return false;
 	}
 

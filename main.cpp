@@ -9,6 +9,28 @@ using namespace std;
 #include <algorithm>
 
 int main() {
+
+	//For signup system
+	string enteredPassword;
+	string enteredUserName;
+	Login newUser = Login();
+	bool validity;
+	
+	cout << "Enter userName" << endl;
+	cin >> enteredUserName;
+	newUser.setUserName(enteredUserName);
+
+	do {
+		cout << "Enter password" << endl;
+		cin >> enteredPassword;
+		validity = newUser.checkValidity(enteredPassword);
+	} while (!validity);
+
+	newUser.setPassword(enteredPassword);
+	
+	
+
+
 	list <User> users;	//not going to worry about user lookup efficiency since only need sample of users for proof of concept.
 	User u1(Login("admin","Admin100")); User u2(Login("cisc320","McLeod123")); User u3(Login("anything","Anything1")); //Creating Users
 	users.push_back(u1); users.push_back(u2); users.push_back(u3);	//Adding users to database
