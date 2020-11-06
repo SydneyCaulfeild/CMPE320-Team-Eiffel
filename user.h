@@ -6,6 +6,8 @@
 
 #include <iostream>
 #include <string>
+#include "login.h"
+#include "address.h"
 
 using namespace std;
 
@@ -14,8 +16,9 @@ class User {
 public:
 
 	// constructors
-	User();
-	User(int volume, Address currentLocation, bool indoor, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds);
+	User(); //null instance
+	User(Login loginCreds);
+	User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds);
 
 	// accessors
 	int getVolume();
@@ -23,7 +26,7 @@ public:
 	bool getInternet();
 	bool getPower();
 	bool getEquipment();
-	bool getIndoor();
+	string getInOrOut();
 	double getMaxDistance();
 	Login getLogin();
 
@@ -32,7 +35,7 @@ public:
 	void setCurrentLocation(Address currentLocation);
 	void setLogin(Login LoginCreds);
 	void setMaxDistance(double maxTravelDistance);
-	void setIndoor(bool indoor);
+	void setInOrOut(string inOrOut);
 	void setEquipment(bool equipment);
 	void setPower(bool power);
 	void setInternet(bool internet);
@@ -42,7 +45,7 @@ private:
 	// attributes
 	int volume;
 	Address currentLocation;
-	bool indoor;
+	string inOrOut;
 	bool internet;
 	bool power;
 	bool equipment;

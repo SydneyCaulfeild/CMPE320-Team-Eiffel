@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include "user.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ public:
 
 	// constructors
 	Location();
-	Location(int volume, Address location, bool indoor,	bool internet, bool power, bool equipment, int maxCapacity, int currentCapacity);
+	Location(int volume, Address location, string inOrOut, bool internet, bool power, bool equipment, int maxCapacity, int currentCapacity);
 
 	// accessors
 	int getVolume();
@@ -23,26 +24,29 @@ public:
 	bool getInternet();
 	bool getPower();
 	bool getEquipment();
-	bool getIndoor();
+	string getInOrOut();
 	int getMaxCapacity();
 	int getCurrentCapacity();
 
 	// mutators
-	bool setInternet(bool internet);
-	bool setPower(bool power);
-	bool setEquipment(bool equipment);
-	bool setIndoor(bool indoor);
-	int setMaxCapacity(int maxCapacity);
-	int setCurrentCapacity(int currentCapacity);
+	void setInternet(bool internet);
+	void setPower(bool power);
+	void setEquipment(bool equipment);
+	void setInOrOut(string inOrOut);
+	void setMaxCapacity(int maxCapacity);
+	void setCurrentCapacity(int currentCapacity);
 
-	void checkPreferences(User user);
+	// overridden less than operator for sorting
+	bool operator<(const Location& right);
+
+	bool checkPreferences(User user);
 
 private:
 
 	// attributes
 	int volume;
 	Address location;
-	bool indoor;
+	string inOrOut;
 	bool internet;
 	bool power;
 	bool equipment;
