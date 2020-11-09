@@ -8,6 +8,7 @@
 #include <string>
 #include "login.h"
 #include "address.h"
+#include "location.h"
 
 using namespace std;
 
@@ -29,6 +30,7 @@ public:
 	string getInOrOut();
 	double getMaxDistance();
 	Login getLogin();
+	Location getCurrentStudySpot();
 
 	// mutators
 	void setVolume(int volume);
@@ -39,6 +41,7 @@ public:
 	void setEquipment(bool equipment);
 	void setPower(bool power);
 	void setInternet(bool internet);
+	void setCurrentStudySpot(Location currentStudySpot);
 
 private:
 
@@ -51,4 +54,5 @@ private:
 	bool equipment;
 	double maxTravelDistance;
 	Login loginCreds;
+	Location currentStudySpot;
 };
