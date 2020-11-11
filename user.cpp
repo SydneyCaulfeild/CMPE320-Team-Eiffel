@@ -10,15 +10,17 @@
 #include "address.h"
 #include "user.h"
 
+#include "location.h"
+
 using namespace std;
 
 // constructors
 User::User() {}
 
-User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), inOrOut("either"), internet(false), power(false), equipment(false), maxTravelDistance(-1)  {}
+User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), inOrOut("either"), internet(false), power(false), equipment(false), maxTravelDistance(-1), currentStudySpot(Address())  {}
 
 User::User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds) :
-	volume(volume), currentLocation(currentLocation), inOrOut(inOrOut), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds) {}
+	volume(volume), currentLocation(currentLocation), inOrOut(inOrOut), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds), currentStudySpot(Address()) {}
 
 // accessors
 int User::getVolume() {
@@ -49,10 +51,16 @@ double User::getMaxDistance() {
 	return maxTravelDistance;
 }
 
-Login User::getLogin()
+Login User::getLogin() const
 {
 	return loginCreds;
 }
+
+Address User::getCurrentStudySpot()
+{
+	return currentStudySpot;
+}
+
 
 // mutators
 void User::setVolume(int volume) {
@@ -85,3 +93,13 @@ void User::setPower(bool power) {
 void User::setInternet(bool internet) {
 	this->internet = internet;
 }
+
+void User::setCurrentStudySpot(Address currentStudySpot)
+{
+	this->currentStudySpot = currentStudySpot;
+}
+
+bool User::equals(User right) const {
+	return ((this->getVolume() == right.getVolume()) && (this->getPower() == right.getPower()) && (this->getInternet() == right.getInternet()) && (this->getEquipment() == right.getEquipment()) && (this->getLogin().equals(right.getLogin())) && (this->getInOrOut() == right.getInOrOut()) && (this->getMaxDistance() == right.getMaxDistance()) && (this->getCurrentLocation() == right.getCurrentLocation()) && (this->getCurrentStudySpot() == right.getCurrentStudySpot()));
+}
+

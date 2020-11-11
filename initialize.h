@@ -1,7 +1,7 @@
-#include "location.h"
-
 #include <list>
 #include <string>
+
+#include "location.h"
 
 class Initialize {
 public:

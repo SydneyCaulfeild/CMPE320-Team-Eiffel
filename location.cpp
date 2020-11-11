@@ -39,6 +39,8 @@ toDo
 */
 
 // Include libraries
+#include "location.h"
+
 #include <time.h>
 #include <vector>
 #include <stdio.h>
@@ -49,7 +51,6 @@ toDo
 #include <string>
 
 // Include insult location.h and address.h files
-#include "location.h"
 #include "address.h"
 #include "user.h"
 

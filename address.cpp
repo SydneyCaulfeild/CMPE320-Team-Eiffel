@@ -35,6 +35,7 @@
 
 // Include other address.h file
 #include "address.h"
+
 #include "location.h"
 
 using namespace std;
@@ -114,4 +115,8 @@ bool Address::deleteAddress(string address) {
     // find the address in the data structure
     // remove from the data structure
 	return false;
+}
+
+bool Address::equals(Address right) const{
+	return ((this->getAddressName() == right.getAddressName()) && (this->getLongitude() == right.getLongitude()) && (this->getLatitude() == right.getLatitude()));
 }

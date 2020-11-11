@@ -1,12 +1,12 @@
 #include "initialize.h"
-#include "location.h"
-
 #include <list>
 #include <string>
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <vector>
+
+#include "location.h"
 
 list<Location> Initialize::createList(char filePath[]) {
 	list<Location> listOfLocations;

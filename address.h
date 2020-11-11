@@ -30,6 +30,8 @@ public:
 	float calculateDistance(float longitude, float latitude, float myLongitude, float myLatitude);// Method that calculates the distance between 2 points with coordinates (longitude, latitude)
 	bool deleteAddress(string address);// Delete address method
 
+	bool equals(Address right) const;
+
 private:
 	float longitude;
 	float latitude;
