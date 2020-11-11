@@ -43,7 +43,7 @@ public:
 	void setInternet(bool internet);
 	void setCurrentStudySpot(Address currentStudySpot);
 
-	bool equals(User right) const;
+	//bool equals(User right) const;
 
 private:
 
@@ -59,5 +59,5 @@ private:
 	Address currentStudySpot;
 };
 
-bool operator==(const User&left, const User& right);
+bool operator==(User left, User right);
 bool operator!=(const User&left, const User& right);

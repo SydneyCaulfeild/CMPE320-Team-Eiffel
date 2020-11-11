@@ -117,6 +117,10 @@ bool Address::deleteAddress(string address) {
 	return false;
 }
 
-bool Address::equals(Address right) const{
-	return ((this->getAddressName() == right.getAddressName()) && (this->getLongitude() == right.getLongitude()) && (this->getLatitude() == right.getLatitude()));
+bool operator==(Address left, Address right){
+	return ((left.getAddressName() == right.getAddressName()) && (left.getLongitude() == right.getLongitude()) && (left.getLatitude() == right.getLatitude()));
 }
+
+/*bool Address::equals(Address right) const{
+	return ((this->getAddressName() == right.getAddressName()) && (this->getLongitude() == right.getLongitude()) && (this->getLatitude() == right.getLatitude()));
+}*/

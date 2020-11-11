@@ -5,8 +5,11 @@ using namespace std;
 #include "user.h"
 #include "login.h"
 #include "address.h"
+#include "initialize.h"
 #include <list>
 #include <algorithm>
+
+list<Location> createValidList(list<Location> allLocations, User u);
 
 int main() {
 
@@ -68,19 +71,20 @@ int main() {
 	}
 
 	//initialize the list
-
+	Initialize initialize;
 	list <Location> allLocations; //list of all locations
 	list <Location> validLocations; //list of locations that meet the user specified criteria
-	allLocations = initialize.createList(char filePath[]); //return a list of all locations (reading data from input file)
-	validLocations = createValidList(allLocations, user); //return a list of all locations that meet the preference criteria
+	allLocations = initialize.createList("src\\kingstonStudySpots.txt"); //return a list of all locations (reading data from input file)
+	validLocations = createValidList(allLocations, u1); //return a list of all locations that meet the preference criteria
 	
 }
 
 list<Location> createValidList(list<Location> allLocations, User u) { //function to return a list of valid locations for a given user u
 	list<Location> validLocations;
 	for (std::list<Location>::const_iterator it = allLocations.begin(); it != allLocations.end(); ++it) { //iterate through all locations
-		if (it.checkPreferences(u) == true)
-			validLocations.push_back(it);
+		Location loc(it);
+		if (loc.checkPreferences(u) == true)
+			validLocations.push_back(loc);
 	}
 	return validLocations;
 }
