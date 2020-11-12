@@ -35,6 +35,7 @@
 
 // Include other address.h file
 #include "address.h"
+
 #include "location.h"
 
 using namespace std;
@@ -115,3 +116,11 @@ bool Address::deleteAddress(string address) {
     // remove from the data structure
 	return false;
 }
+
+bool operator==(Address left, Address right){
+	return ((left.getAddressName() == right.getAddressName()) && (left.getLongitude() == right.getLongitude()) && (left.getLatitude() == right.getLatitude()));
+}
+
+/*bool Address::equals(Address right) const{
+	return ((this->getAddressName() == right.getAddressName()) && (this->getLongitude() == right.getLongitude()) && (this->getLatitude() == right.getLatitude()));
+}*/

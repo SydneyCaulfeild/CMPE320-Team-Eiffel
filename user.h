@@ -29,8 +29,8 @@ public:
 	bool getEquipment();
 	string getInOrOut();
 	double getMaxDistance();
-	Login getLogin();
-	Location getCurrentStudySpot();
+	Login getLogin() const;
+	Address getCurrentStudySpot();
 
 	// mutators
 	void setVolume(int volume);
@@ -41,7 +41,9 @@ public:
 	void setEquipment(bool equipment);
 	void setPower(bool power);
 	void setInternet(bool internet);
-	void setCurrentStudySpot(Location currentStudySpot);
+	void setCurrentStudySpot(Address currentStudySpot);
+
+	//bool equals(User right) const;
 
 private:
 
@@ -54,5 +56,8 @@ private:
 	bool equipment;
 	double maxTravelDistance;
 	Login loginCreds;
-	Location currentStudySpot;
+	Address currentStudySpot;
 };
+
+bool operator==(User left, User right);
+bool operator!=(const User&left, const User& right);

@@ -16,10 +16,10 @@ using namespace std;
 // constructors
 User::User() {}
 
-User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), inOrOut("either"), internet(false), power(false), equipment(false), maxTravelDistance(-1), currentStudySpot(Location())  {}
+User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), inOrOut("either"), internet(false), power(false), equipment(false), maxTravelDistance(-1), currentStudySpot(Address())  {}
 
 User::User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds) :
-	volume(volume), currentLocation(currentLocation), inOrOut(inOrOut), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds), currentStudySpot(Location()) {}
+	volume(volume), currentLocation(currentLocation), inOrOut(inOrOut), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds), currentStudySpot(Address()) {}
 
 // accessors
 int User::getVolume() {
@@ -50,12 +50,12 @@ double User::getMaxDistance() {
 	return maxTravelDistance;
 }
 
-Login User::getLogin()
+Login User::getLogin() const
 {
 	return loginCreds;
 }
 
-Location User::getCurrentStudySpot()
+Address User::getCurrentStudySpot()
 {
 	return currentStudySpot;
 }
@@ -93,7 +93,17 @@ void User::setInternet(bool internet) {
 	this->internet = internet;
 }
 
-void User::setCurrentStudySpot(Location currentStudySpot)
+void User::setCurrentStudySpot(Address currentStudySpot)
 {
 	this->currentStudySpot = currentStudySpot;
 }
+
+bool operator==(User left, User right) {
+	return ((left.getVolume() == right.getVolume()) && (left.getPower() == right.getPower()) && (left.getInternet() == right.getInternet()) && (left.getEquipment() == right.getEquipment()) && (left.getLogin().equals(right.getLogin())) && (left.getInOrOut() == right.getInOrOut()) && (left.getMaxDistance() == right.getMaxDistance()) && (left.getCurrentLocation()  == right.getCurrentLocation()) && (left.getCurrentStudySpot() == right.getCurrentStudySpot()));
+}
+
+/*bool User::equals(User right) const {
+	return ((this->getVolume() == right.getVolume()) && (this->getPower() == right.getPower()) && (this->getInternet() == right.getInternet()) && (this->getEquipment() == right.getEquipment()) && (this->getLogin().equals(right.getLogin())) && (this->getInOrOut() == right.getInOrOut()) && (this->getMaxDistance() == right.getMaxDistance()) && ((this->getCurrentLocation()).equals(right.getCurrentLocation())) && ((this->getCurrentStudySpot()).equals(right.getCurrentStudySpot())));
+}*/
+
+

@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+class User;
 #include "user.h"
 
 using namespace std;

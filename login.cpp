@@ -18,9 +18,12 @@ Login :: Login() : userName(), password(){}
 
 Login :: Login(const string& userName, const string& password) : userName(userName), password(password){}
 
-//Accessor
+//Accessors
 string Login::getUserName()const {
 	return userName;
+}
+string Login::getPassword()const {
+	return password;
 }
 
 //Mutator
@@ -73,6 +76,7 @@ bool Login::checkValidity(string enteredPassword)
 		cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;
 		return false;
 	}
-
-
+}
+bool Login::equals(Login right) const{
+	return ((this->password == right.getPassword()) && (this->userName == right.getUserName()));
 }
