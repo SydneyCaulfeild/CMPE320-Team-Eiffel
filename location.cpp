@@ -139,15 +139,15 @@ bool Location::operator<(const Location& right)
 }
 
 // Check user preferences method, returns true if the study spot is valid to add to the list
-bool Location::checkPreferences(User user) {
+bool Location::checkPreferences(Location location, User user) const {
     //check all the boolean variables, statement is true if every variable matches
-    if (user.getEquipment() == this->equipment
-        && user.getInOrOut() == this->inOrOut
-        && user.getInternet() == this->internet
-        && user.getPower() == this->power
-        && user.getVolume() >= this->volume
-        && this->currentCapacity < this->maxCapacity) {
-        float temp = user.getCurrentLocation().calculateDistance(this->getLocation().getLongitude(), this->getLocation().getLatitude(),
+    if (user.getEquipment() == location.getEquipment()
+        && user.getInOrOut() == location.getInOrOut()
+        && user.getInternet() == location.getInternet()
+        && user.getPower() == location.getPower()
+        && user.getVolume() >= location.getVolume()
+        && this->currentCapacity < location.getMaxCapacity()) {
+        float temp = user.getCurrentLocation().calculateDistance(location.getLocation().getLongitude(), location.getLocation().getLatitude(),
         		user.getCurrentLocation().getLongitude(), user.getCurrentLocation().getLatitude()); //this function must be overloaded to the address class
         if (temp <= user.getMaxDistance())
             return true; // a location exists that meets requirements and is within a valid distance

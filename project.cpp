@@ -9,7 +9,7 @@ using namespace std;
 #include <list>
 #include <algorithm>
 
-list<Location> createValidList(list<Location> allLocations, User u);
+//list<Location> createValidList(list<Location> allLocations, User u);
 
 int main() {
 
@@ -66,26 +66,25 @@ int main() {
 		}
 	}
 
-	while (currentUser != nullUser) {
-		//functionality available to user once logged in
-	}
-
+	while (!(currentUser == nullUser)) { 	//functionality available to user once logged in
 	//initialize the list
 	Initialize initialize;
-	list <Location> allLocations; //list of all locations
+	list <Location> allLocations = initialize.createList("src\\kingstonStudySpots.txt"); //return a list of all locations (reading data from input file)
 	list <Location> validLocations; //list of locations that meet the user specified criteria
-	allLocations = initialize.createList("src\\kingstonStudySpots.txt"); //return a list of all locations (reading data from input file)
-	validLocations = createValidList(allLocations, u1); //return a list of all locations that meet the preference criteria
-	
-}
-
-list<Location> createValidList(list<Location> allLocations, User u) { //function to return a list of valid locations for a given user u
-	list<Location> validLocations;
-	for (std::list<Location>::const_iterator it = allLocations.begin(); it != allLocations.end(); ++it) { //iterate through all locations
-		Location loc(it);
-		if (loc.checkPreferences(u) == true)
-			validLocations.push_back(loc);
+	for (Location const& i : allLocations) { //iterate through all locations
+			if (i.checkPreferences(i,currentUser)) {
+				validLocations.push_back(i);
+			}
+		}
 	}
-	return validLocations;
 }
 
+//list<Location> createValidList(list<Location> allLocations, User u) { //function to return a list of valid locations for a given user u
+//	list<Location> validLocations;
+//	for (std::list<Location>::const_iterator it = allLocations.begin(); it != allLocations.end(); ++it) { //iterate through all locations
+//		Location loc(it);
+//		if (loc.checkPreferences(u) == true)
+//			validLocations.push_back(loc);
+//	}
+//	return validLocations;
+//}

@@ -40,7 +40,7 @@ public:
 	// overridden less than operator for sorting
 	bool operator<(const Location& right);
 
-	bool checkPreferences(User user);
+	bool checkPreferences(Location location, User user) const;
 
 private:
 
