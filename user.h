@@ -43,8 +43,6 @@ public:
 	void setInternet(bool internet);
 	void setCurrentStudySpot(Address currentStudySpot);
 
-	//bool equals(User right) const;
-
 private:
 
 	// attributes

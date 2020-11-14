@@ -93,6 +93,7 @@ void User::setInternet(bool internet) {
 	this->internet = internet;
 }
 
+<<<<<<< HEAD
 void User::setCurrentStudySpot(Address currentStudySpot)
 {
 	this->currentStudySpot = currentStudySpot;
@@ -101,10 +102,3 @@ void User::setCurrentStudySpot(Address currentStudySpot)
 bool operator==(User left, User right) {
 	return ((left.getVolume() == right.getVolume()) && (left.getPower() == right.getPower()) && (left.getInternet() == right.getInternet()) && (left.getEquipment() == right.getEquipment()) && (left.getLogin().equals(right.getLogin())) && (left.getInOrOut() == right.getInOrOut()) && (left.getMaxDistance() == right.getMaxDistance()) && (left.getCurrentLocation()  == right.getCurrentLocation()) && (left.getCurrentStudySpot() == right.getCurrentStudySpot()));
 }
-
-/*bool User::equals(User right) const {
-	return ((this->getVolume() == right.getVolume()) && (this->getPower() == right.getPower()) && (this->getInternet() == right.getInternet()) && (this->getEquipment() == right.getEquipment()) && (this->getLogin().equals(right.getLogin())) && (this->getInOrOut() == right.getInOrOut()) && (this->getMaxDistance() == right.getMaxDistance()) && ((this->getCurrentLocation()).equals(right.getCurrentLocation())) && ((this->getCurrentStudySpot()).equals(right.getCurrentStudySpot())));
-}*/
-
-
-
