@@ -64,13 +64,13 @@ bool Login::checkValidity(string enteredPassword)
 	}
 
 	cout << "Password Length : " << (length ? "Long Enough" : "Too Short") << endl;
-	cout << "Password contains digit ? : " << (digit ? "Yes" : "No") << endl;
-	cout << "Password contains upper case ? : " << (upperCase ? "Yes" : "No") << endl;
-	cout << "Password contains lower case ? : " << (lowerCase ? "Yes" : "No") << endl;
+	cout << "Password contains digit? : " << (digit ? "Yes" : "No") << endl;
+	cout << "Password contains upper case? : " << (upperCase ? "Yes" : "No") << endl;
+	cout << "Password contains lower case? : " << (lowerCase ? "Yes" : "No") << endl;
 
 	if(length == true && digit == true && upperCase == true && lowerCase == true) {
 		valid = true;
-		cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;
+		cout << "Password is valid? : " << (valid ? "Yes" : "No") << endl;
 		return true;
 	} else {
 		cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;

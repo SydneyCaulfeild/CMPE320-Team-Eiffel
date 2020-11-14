@@ -12,7 +12,6 @@ using namespace std;
 list<Location> createValidList(list<Location> allLocations, User u);
 
 int main() {
-
 	//For signup system
 	string enteredPassword;
 	string enteredUserName;
@@ -24,7 +23,7 @@ int main() {
 	newUser.setUserName(enteredUserName);
 
 	do {
-		cout << "Enter password" << endl;
+		cout << "Enter password. You need at least one digit, one upper case letter, one lower case letter." << endl;
 		cin >> enteredPassword;
 		validity = newUser.checkValidity(enteredPassword);
 	} while (!validity);
@@ -81,10 +80,10 @@ int main() {
 
 list<Location> createValidList(list<Location> allLocations, User u) { //function to return a list of valid locations for a given user u
 	list<Location> validLocations;
-	for (std::list<Location>::const_iterator it = allLocations.begin(); it != allLocations.end(); ++it) { //iterate through all locations
-		Location loc(it);
-		if (loc.checkPreferences(u) == true)
-			validLocations.push_back(loc);
+	for (std::list<Location>::iterator it = allLocations.begin(); it != allLocations.end(); ++it) { //iterate through all locations
+		//Location loc(it);
+		if ((*it).checkPreferences(u) == true)
+			validLocations.push_back(*it);
 	}
 	return validLocations;
 }

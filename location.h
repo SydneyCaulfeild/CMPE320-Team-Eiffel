@@ -18,6 +18,7 @@ public:
 	// constructors
 	Location();
 	Location(int volume, Address location, string inOrOut, bool internet, bool power, bool equipment, int maxCapacity, int currentCapacity);
+	//Location(Location loc);
 
 	// accessors
 	int getVolume();

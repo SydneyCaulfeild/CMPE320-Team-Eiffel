@@ -73,13 +73,14 @@ void Address::setAddressName(string myAddressName) {
 // Utility function for converting degrees to radians
 long double Address::toRadians(const long double degree) {
     // cmath library in C++ defines the constant M_PI = pi
-    long double one_deg = (M_PI) / 180;
+	double pi = 3.1415926;
+    long double one_deg = (pi) / 180;
     return (one_deg * degree);
 }
 
 // Method that calculates the distance between 2 points with coordinates (longitude, latitude)
 // https://www.geeksforgeeks.org/program-distance-two-points-earth/
-float Address::calculateDistance(float longitude, float latitude, float myLongitude, float myLatitude) {
+float Address::calculateDistance(float longitude, float latitude, float myLongitude, float myLatitude){
     // Convert the latitudes and longitudes from degree to radians.
     latitude = toRadians(latitude);
     longitude = toRadians(longitude);
