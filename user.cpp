@@ -93,7 +93,6 @@ void User::setInternet(bool internet) {
 	this->internet = internet;
 }
 
-<<<<<<< HEAD
 void User::setCurrentStudySpot(Address currentStudySpot)
 {
 	this->currentStudySpot = currentStudySpot;
