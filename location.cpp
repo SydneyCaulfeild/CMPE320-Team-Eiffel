@@ -41,6 +41,7 @@ toDo
 // Include libraries
 #include "location.h"
 
+#include <list>
 #include <time.h>
 #include <vector>
 #include <stdio.h>
@@ -69,6 +70,7 @@ Location::Location(int volume, Address location, string inOrOut, bool internet, 
     this->maxCapacity = maxCapacity;
     this->currentCapacity = currentCapacity;
 }
+
 // Accessor
 int Location::getVolume() {
     return volume;
@@ -133,22 +135,23 @@ void Location::setCurrentCapacity(int currentCapacity)
 
 bool Location::operator<(const Location& right)
 {
-	Address addr1 = this->location;
-	Address addr2 = right.location;
-	return addr1.getLongitude() < addr2.getLongitude();
+    Address addr1 = this->location;
+    Address addr2 = right.location;
+    return addr1.getLongitude() < addr2.getLongitude();
 }
 
+
 // Check user preferences method, returns true if the study spot is valid to add to the list
-bool Location::checkPreferences(Location location, User user) const {
+bool Location::checkPreferences(User user){
     //check all the boolean variables, statement is true if every variable matches
-    if (user.getEquipment() == location.getEquipment()
-        && user.getInOrOut() == location.getInOrOut()
-        && user.getInternet() == location.getInternet()
-        && user.getPower() == location.getPower()
-        && user.getVolume() >= location.getVolume()
-        && this->currentCapacity < location.getMaxCapacity()) {
-        float temp = user.getCurrentLocation().calculateDistance(location.getLocation().getLongitude(), location.getLocation().getLatitude(),
-        		user.getCurrentLocation().getLongitude(), user.getCurrentLocation().getLatitude()); //this function must be overloaded to the address class
+    if (user.getEquipment() == this->equipment
+        && user.getInOrOut() == this->inOrOut
+        && user.getInternet() == this->internet
+        && user.getPower() == this->power
+        && user.getVolume() >= this->volume
+        && this->currentCapacity < this->maxCapacity) {
+        float temp = user.getCurrentLocation().calculateDistance(this->getLocation().getLongitude(), this->getLocation().getLatitude(),
+                user.getCurrentLocation().getLongitude(), user.getCurrentLocation().getLatitude()); //this function must be overloaded to the address class
         if (temp <= user.getMaxDistance())
             return true; // a location exists that meets requirements and is within a valid distance
         return false; //the location is too far
