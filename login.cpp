@@ -18,9 +18,12 @@ Login :: Login() : userName(), password(){}
 
 Login :: Login(const string& userName, const string& password) : userName(userName), password(password){}
 
-//Accessor
+//Accessors
 string Login::getUserName()const {
 	return userName;
+}
+string Login::getPassword()const {
+	return password;
 }
 
 //Mutator
@@ -61,18 +64,20 @@ bool Login::checkValidity(string enteredPassword)
 	}
 
 	cout << "Password Length : " << (length ? "Long Enough" : "Too Short") << endl;
-	cout << "Password contains digit ? : " << (digit ? "Yes" : "No") << endl;
-	cout << "Password contains upper case ? : " << (upperCase ? "Yes" : "No") << endl;
-	cout << "Password contains lower case ? : " << (lowerCase ? "Yes" : "No") << endl;
+	cout << "Password contains digit? : " << (digit ? "Yes" : "No") << endl;
+	cout << "Password contains upper case? : " << (upperCase ? "Yes" : "No") << endl;
+	cout << "Password contains lower case? : " << (lowerCase ? "Yes" : "No") << endl;
 
 	if(length == true && digit == true && upperCase == true && lowerCase == true) {
 		valid = true;
-		cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;
+		cout << "Password is valid? : " << (valid ? "Yes" : "No") << endl;
 		return true;
 	} else {
 		cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;
 		return false;
 	}
-
-
 }
+bool Login::equals(Login right) const{
+	return ((this->password == right.getPassword()) && (this->userName == right.getUserName()));
+}
+

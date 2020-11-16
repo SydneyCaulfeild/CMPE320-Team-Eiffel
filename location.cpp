@@ -39,6 +39,9 @@ toDo
 */
 
 // Include libraries
+#include "location.h"
+
+#include <list>
 #include <time.h>
 #include <vector>
 #include <stdio.h>
@@ -49,7 +52,6 @@ toDo
 #include <string>
 
 // Include insult location.h and address.h files
-#include "location.h"
 #include "address.h"
 #include "user.h"
 
@@ -68,6 +70,7 @@ Location::Location(int volume, Address location, string inOrOut, bool internet, 
     this->maxCapacity = maxCapacity;
     this->currentCapacity = currentCapacity;
 }
+
 // Accessor
 int Location::getVolume() {
     return volume;
@@ -137,8 +140,9 @@ bool Location::operator<(const Location& right)
 	return addr1.getLongitude() < addr2.getLongitude();
 }
 
+
 // Check user preferences method, returns true if the study spot is valid to add to the list
-bool Location::checkPreferences(User user) {
+bool Location::checkPreferences( User user){
     //check all the boolean variables, statement is true if every variable matches
     if (user.getEquipment() == this->equipment
         && user.getInOrOut() == this->inOrOut
