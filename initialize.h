@@ -5,5 +5,5 @@
 
 class Initialize {
 public:
-	list<Location> createList(char filePath[]);
+    list<Location> createList(char filePath[]);
 };

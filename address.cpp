@@ -73,7 +73,7 @@ void Address::setAddressName(string myAddressName) {
 // Utility function for converting degrees to radians
 long double Address::toRadians(const long double degree) {
     // cmath library in C++ defines the constant M_PI = pi
-	double pi = 3.1415926;
+    double pi = 3.1415926;
     long double one_deg = (pi) / 180;
     return (one_deg * degree);
 }
@@ -115,13 +115,13 @@ bool Address::deleteAddress(string address) {
     // also need to pass in the attributes of this address and set to null, discard memory and pass in data structure
     // find the address in the data structure
     // remove from the data structure
-	return false;
+    return false;
 }
 
 bool operator==(Address left, Address right){
-	return ((left.getAddressName() == right.getAddressName()) && (left.getLongitude() == right.getLongitude()) && (left.getLatitude() == right.getLatitude()));
+    return ((left.getAddressName() == right.getAddressName()) && (left.getLongitude() == right.getLongitude()) && (left.getLatitude() == right.getLatitude()));
 }
 
 /*bool Address::equals(Address right) const{
-	return ((this->getAddressName() == right.getAddressName()) && (this->getLongitude() == right.getLongitude()) && (this->getLatitude() == right.getLatitude()));
+    return ((this->getAddressName() == right.getAddressName()) && (this->getLongitude() == right.getLongitude()) && (this->getLatitude() == right.getLatitude()));
 }*/

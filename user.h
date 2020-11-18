@@ -58,4 +58,4 @@ private:
 };
 
 bool operator==(User left, User right);
-bool operator!=(const User&left, const User& right);
+//bool operator!=(const User&left, const User& right);
