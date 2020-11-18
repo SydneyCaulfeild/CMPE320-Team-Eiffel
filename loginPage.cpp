@@ -1,5 +1,4 @@
 #include "loginPage.h"
-//#include "ui_loginPage.h"
 #include <QMessageBox>
 #include "user.h"
 #include <QTimer>
@@ -34,46 +33,57 @@ void LoginPage::on_loginButton_clicked()
 {
     QString username = ui->usernameInput->text();
     QString password = ui->passwordInput->text();
-    if(username.isEmpty() || password.isEmpty())
+    if (username.isEmpty() || password.isEmpty())
     {
-        QMessageBox :: information(this, "Login", "Empty username or password");
+        QMessageBox::information(this, "Login", "Empty username or password");
     }
 
-    else{
+    else {
         QString username = ui->usernameInput->text();
         QString password = ui->passwordInput->text();
         User currentUser;
         User nullUser;
         bool userExists = false;
+        bool correctPassword = false;
+
+        list <User> users;
+        //For testing
+        Login L1 = Login("Amy", "123"); Login L2 = Login("Tom", "abc");
+        User u1 = User(L1); User u2 = User(L2); users.push_back(u1); users.push_back(u2);
+
 
         //check if username is registered
-        list <User> users;
-            for (User i : users) {
-                if ((i.getLogin()).getUserName() == username.toStdString()) {
-                    userExists = true;	//Validates credentials and assigns instance to correct user
+        for (const User& i : users) {
+            if ((i.getLogin()).getUserName() == username.toStdString()) {
+                userExists = true;	//Validates credentials and assigns instance to correct user
+            }
+        }
+
+        //username exists
+        if (userExists == true) {
+            Login enteredCreds = Login(username.toStdString(), password.toStdString());
+            for (const User& i : users) {
+                if (i.getLogin() == enteredCreds) {
+                    currentUser = i;	//Validates credentials and assigns instance to correct user
+                    correctPassword = true;
                 }
             }
 
-//            //username exists
-//            if (userExists == true) {
-//                Login enteredCreds = Login(username.toStdString(), password.toStdString());
-//                for (User i : users) {
-//                    if (i.getLogin() == enteredCreds) {
-//                        currentUser = i;	//Validates credentials and assigns instance to correct user
-//                    }
-//                }
-//                if (currentUser == nullUser) {	//incorrect password
-//                    cout << "\nIncorrect Password!" << endl;
-//                }
-//            }
+            if (!correctPassword) {	//incorrect password
+                QMessageBox::information(this, "Login", "Incorrect Password!");
+            }
+        }
 
-//            while (currentUser != nullUser) {
-//                //functionality available to user once logged in
-//            }
+        else {
+            QMessageBox::information(this, "Login", "User doesn't exist!");
+        }
+
+        //            while (!(currentUser == nullUser)) {
+        //                //functionality available to user once logged in
+        //            }
 
 
     }
-
 }
 
 void LoginPage::on_signupButton_clicked()
