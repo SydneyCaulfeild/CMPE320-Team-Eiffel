@@ -40,7 +40,7 @@ void signup::on_createAccountButton_clicked()
     QString password = ui->newPassword->text();
 
     if(username.isEmpty() || password.isEmpty()){
-        QMessageBox :: information(this, "Login", "Empty username or password");
+        QMessageBox :: information(this, "Signup", "Empty username or password");
     }
 
     else{
@@ -59,7 +59,7 @@ void signup::on_createAccountButton_clicked()
         list <User> users;
 
         //Check if the username exists
-        for (User i : users) {
+        for (const User &i : users) {
             if ((i.getLogin()).getUserName() == username.toStdString()) {
                 userExists = true;
             }
