@@ -1,9 +1,9 @@
-#include "location.h"
-
 #include <list>
 #include <string>
 
+#include "location.h"
+
 class Initialize {
 public:
-	list<Location> createList(char filePath[]);
+    list<Location> createList(char filePath[]);
 };

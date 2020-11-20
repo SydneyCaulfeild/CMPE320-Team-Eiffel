@@ -16,84 +16,88 @@ using namespace std;
 // constructors
 User::User() {}
 
-User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), inOrOut("either"), internet(false), power(false), equipment(false), maxTravelDistance(-1), currentStudySpot(Location())  {}
+User::User(Login loginCreds) : loginCreds(loginCreds), volume(-1), currentLocation(Address(-1,-1,"null")), inOrOut("either"), internet(false), power(false), equipment(false), maxTravelDistance(-1), currentStudySpot(Address())  {}
 
 User::User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds) :
-	volume(volume), currentLocation(currentLocation), inOrOut(inOrOut), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds), currentStudySpot(Location()) {}
+	volume(volume), currentLocation(currentLocation), inOrOut(inOrOut), internet(internet), power(power), equipment(equipment), maxTravelDistance(maxTravelDistance), loginCreds(loginCreds), currentStudySpot(Address()) {}
 
 // accessors
-int User::getVolume() {
-	return volume;
+int User::getVolume() const{
+    return volume;
 }
 
-Address User::getCurrentLocation() {
-	return currentLocation;
+Address User::getCurrentLocation() const{
+    return currentLocation;
 }
 
-bool User::getInternet() {
-	return internet;
+bool User::getInternet() const{
+    return internet;
 }
 
-bool User::getPower() {
-	return power;
+bool User::getPower() const{
+    return power;
 }
 
-bool User::getEquipment() {
-	return equipment;
+bool User::getEquipment() const{
+    return equipment;
 }
 
-string User::getInOrOut() {
-	return inOrOut;
+string User::getInOrOut() const{
+    return inOrOut;
 }
 
-double User::getMaxDistance() {
-	return maxTravelDistance;
+double User::getMaxDistance() const{
+    return maxTravelDistance;
 }
 
-Login User::getLogin()
+Login User::getLogin() const
 {
-	return loginCreds;
+    return loginCreds;
 }
 
-Location User::getCurrentStudySpot()
+Address User::getCurrentStudySpot() const
 {
-	return currentStudySpot;
+    return currentStudySpot;
 }
 
 
 // mutators
 void User::setVolume(int volume) {
-	this->volume = volume;
+    this->volume = volume;
 }
 void User::setCurrentLocation(Address currentLocation) {
-	this->currentLocation = currentLocation;
+    this->currentLocation = currentLocation;
 }
 
 void User::setLogin(Login loginCreds) {
-	this->loginCreds = loginCreds;
+    this->loginCreds = loginCreds;
 }
 
 void User::setMaxDistance(double maxTravelDistance) {
-	this->maxTravelDistance = maxTravelDistance;
+    this->maxTravelDistance = maxTravelDistance;
 }
 
 void User::setInOrOut(string inOrOut) {
-	this->inOrOut = inOrOut;
+    this->inOrOut = inOrOut;
 }
 
 void User::setEquipment(bool equipment) {
-	this->equipment = equipment;
+    this->equipment = equipment;
 }
 
 void User::setPower(bool power) {
-	this->power = power;
+    this->power = power;
 }
 
 void User::setInternet(bool internet) {
-	this->internet = internet;
+    this->internet = internet;
 }
 
-void User::setCurrentStudySpot(Location currentStudySpot)
+void User::setCurrentStudySpot(Address currentStudySpot)
 {
-	this->currentStudySpot = currentStudySpot;
+    this->currentStudySpot = currentStudySpot;
+}
+
+bool operator==(const User& left, const User& right) {
+    return ((left.getVolume() == right.getVolume()) && (left.getPower() == right.getPower()) && (left.getInternet() == right.getInternet()) && (left.getEquipment() == right.getEquipment()) && (left.getLogin().equals(right.getLogin())) && (left.getInOrOut() == right.getInOrOut()) && (left.getMaxDistance() == right.getMaxDistance()) && (left.getCurrentLocation()  == right.getCurrentLocation()) && (left.getCurrentStudySpot() == right.getCurrentStudySpot()));
 }

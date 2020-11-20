@@ -22,15 +22,15 @@ public:
 	User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds);
 
 	// accessors
-	int getVolume();
-	Address getCurrentLocation();
-	bool getInternet();
-	bool getPower();
-	bool getEquipment();
-	string getInOrOut();
-	double getMaxDistance();
-	Login getLogin();
-	Location getCurrentStudySpot();
+	int getVolume() const;
+	Address getCurrentLocation() const;
+	bool getInternet() const;
+	bool getPower() const;
+	bool getEquipment() const;
+	string getInOrOut() const;
+	double getMaxDistance() const;
+	Login getLogin() const;
+	Address getCurrentStudySpot() const;
 
 	// mutators
 	void setVolume(int volume);
@@ -41,7 +41,7 @@ public:
 	void setEquipment(bool equipment);
 	void setPower(bool power);
 	void setInternet(bool internet);
-	void setCurrentStudySpot(Location currentStudySpot);
+	void setCurrentStudySpot(Address currentStudySpot);
 
 private:
 
@@ -54,5 +54,7 @@ private:
 	bool equipment;
 	double maxTravelDistance;
 	Login loginCreds;
-	Location currentStudySpot;
+	Address currentStudySpot;
 };
+
+bool operator==(const User& left, const User& right);
