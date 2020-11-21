@@ -15,6 +15,7 @@ SOURCES += \
     login.cpp \
     loginPage.cpp \
     main.cpp \
+    preferences.cpp \
     project.cpp \
     signup.cpp \
     user.cpp
@@ -25,11 +26,13 @@ HEADERS += \
     location.h \
     login.h \
     loginPage.h \
+    preferences.h \
     signup.h \
     user.h
 
 FORMS += \
     loginPage.ui \
+    preferences.ui \
     signup.ui
 
 # Default rules for deployment.
