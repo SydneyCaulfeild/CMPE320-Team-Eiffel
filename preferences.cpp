@@ -1,15 +1,29 @@
 #include "preferences.h"
 #include "ui_preferences.h"
+#include "address.h"
+#include "location.h"
 
-//Preferences::Preferences(QWidget *parent):
-//    QMainWindow(parent),
-//    ui(new Ui::Preferences)
+#include <QCheckBox>
+#include <QMessageBox>
+
+Preferences::Preferences(QWidget *parent):
+    QMainWindow(parent),
+    ui(new Ui::Preferences)
+{
+    ui->setupUi(this);
+}
+
+Preferences::~Preferences()
+{
+    delete ui;
+}
+
+//Preferences::savePreference()
 //{
-//    ui->setupUi(this);
 //}
 
-//Preferences::~Preferences()
 //{
 //    delete ui;
 //}
 
+//}

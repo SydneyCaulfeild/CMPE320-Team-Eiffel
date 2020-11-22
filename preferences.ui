@@ -160,7 +160,7 @@
      <rect>
       <x>90</x>
       <y>370</y>
-      <width>171</width>
+      <width>241</width>
       <height>31</height>
      </rect>
     </property>
@@ -173,52 +173,10 @@
      </font>
     </property>
     <property name="text">
-     <string>Max Distance (km)</string>
+     <string>Max Distance in km (max = 30 km)</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_13">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>430</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Montserrat SemiBold</family>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_14">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>430</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Montserrat SemiBold</family>
-      <pointsize>10</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>10</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="savePreferences">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -243,14 +201,17 @@ color: white;</string>
      <string>Save</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="volumeLevel">
+   <widget class="QSpinBox" name="volumeCheck">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>360</x>
       <y>330</y>
       <width>46</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="maximum">
+     <number>10</number>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -258,7 +219,7 @@ color: white;</string>
      <rect>
       <x>90</x>
       <y>340</y>
-      <width>101</width>
+      <width>241</width>
       <height>16</height>
      </rect>
     </property>
@@ -271,7 +232,23 @@ color: white;</string>
      </font>
     </property>
     <property name="text">
-     <string>Volume Level</string>
+     <string>Volume Level (1 = quiet, 10 = loud)</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="maxDistance">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>380</y>
+      <width>46</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::PreventContextMenu</enum>
+    </property>
+    <property name="maximum">
+     <number>30</number>
     </property>
    </widget>
   </widget>
