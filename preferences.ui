@@ -197,6 +197,9 @@ color: white;</string>
       <height>25</height>
      </rect>
     </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -227,6 +230,12 @@ color: white;</string>
       <width>46</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::PreventContextMenu</enum>
+    </property>
+    <property name="maximum">
+     <number>30</number>
     </property>
    </widget>
   </widget>
