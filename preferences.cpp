@@ -18,12 +18,18 @@ Preferences::~Preferences()
     delete ui;
 }
 
-//Preferences::savePreference()
-//{
-//}
+Preferences::savePreference()
+{
+    // get all prefences
+    bool power = ui->powerCheck->isChecked();
+    bool outside = ui->outsideCheck->isChecked();
+    bool internet = ui->internetCheck->isChecked();
+    bool equipment = ui->equipmentCheck->isChecked();
+    int volume = ui->volumeCheck->value();
+    int distance = ui->maxDistance->value();
+}
 
-//{
-//    delete ui;
-//}
+Preferences::displayLocations()
+{
 
-//}
+}
