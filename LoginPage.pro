@@ -10,29 +10,29 @@ CONFIG += c++14
 
 SOURCES += \
     address.cpp \
+    findlocationmatches.cpp \
     initialize.cpp \
     location.cpp \
     login.cpp \
     loginPage.cpp \
     main.cpp \
-    preferences.cpp \
     project.cpp \
     signup.cpp \
     user.cpp
 
 HEADERS += \
     address.h \
+    findlocationmatches.h \
     initialize.h \
     location.h \
     login.h \
     loginPage.h \
-    preferences.h \
     signup.h \
     user.h
 
 FORMS += \
+    findlocationmatches.ui \
     loginPage.ui \
-    preferences.ui \
     signup.ui
 
 # Default rules for deployment.

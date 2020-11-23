@@ -2,7 +2,9 @@
 #define SIGNUP_H
 
 #include <QDialog>
+#include "loginPage.h"
 #include "ui_signup.h"
+#include "ui_loginPage.h"
 
 
 
@@ -17,7 +19,7 @@ class signup : public QDialog
 public:
     explicit signup(QWidget *parent = nullptr);
     ~signup();
-
+    //LoginPage *loginPage; //New dialog for signup
 
 private slots:
     void on_createAccountButton_clicked();

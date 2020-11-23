@@ -5,6 +5,7 @@
 #pragma once
 
 #include<iostream>
+#include <list>
 #include <string>
 
 using namespace std;
@@ -19,7 +20,6 @@ public:
     void setPassword(string password); //Mutator to set the password
     bool checkValidity(const string enteredPassword);
     bool equals(Login right) const;
-
 
 private:
     string userName;

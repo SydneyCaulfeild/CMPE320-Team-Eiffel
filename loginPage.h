@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "login.h"
 #include "signup.h"
+#include "user.h"
 #include "ui_loginPage.h"
 
 QT_BEGIN_NAMESPACE
@@ -17,7 +18,9 @@ class LoginPage : public QMainWindow
 public:
     LoginPage(QWidget *parent = nullptr);
     ~LoginPage();
-    signup *signupPage; //New dialog for signup
+
+    list<User> getLoginlist();
+    void addToLoginInfoList(User user);
 
 private slots:
     void on_loginButton_clicked();
@@ -30,6 +33,7 @@ private slots:
 
 private:
     Ui::LoginPage *ui;
+    list<User> usersList;
 
 };
 #endif // LOGINPAGE_H
