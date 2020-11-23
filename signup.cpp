@@ -52,33 +52,32 @@ void signup::on_createAccountButton_clicked()
 
         else{
             newSignup.setPassword(password.toStdString());
-        }
+            bool userExists = false;
+            list <User> users;
 
-        bool userExists = false;
-        list <User> users;
-
-        //Check if the username exists
-        for (const User &i : users) {
-            if ((i.getLogin()).getUserName() == username.toStdString()) {
-                userExists = true;
+            //Check if the username exists
+            for (const User &i : users) {
+                if ((i.getLogin()).getUserName() == username.toStdString()) {
+                    userExists = true;
+                }
             }
-        }
 
-        if(userExists){
-            QMessageBox :: information(this, "Signup", "Username already taken, change another one");
-            ui->newUsername->clear();
-        }
+            if(userExists){
+                QMessageBox :: information(this, "Signup", "Username already taken, change another one");
+                ui->newUsername->clear();
+            }
 
-        else{
-            newSignup.setUserName(username.toStdString());
-            User u1 = User(newSignup);
-            users.push_back(u1);
+            else{
+                newSignup.setUserName(username.toStdString());
+                User u1 = User(newSignup);
+                users.push_back(u1);
 
-            //Move to the next page
-            //.....
-            hide();
-            LoginPage *loginPage = new LoginPage(this);
-            loginPage->show();
+                //Move to the next page
+                //.....
+                hide();
+                LoginPage *loginPage = new LoginPage(this);
+                loginPage->show();
+            }
         }
     }
 }

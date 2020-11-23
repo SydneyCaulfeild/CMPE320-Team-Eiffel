@@ -50,9 +50,9 @@ void LoginPage::on_loginButton_clicked()
         QString username = ui->usernameInput->text();
         QString password = ui->passwordInput->text();
         User currentUser;
-        User nullUser;
         bool userExists = false;
         bool correctPassword = false;
+        bool loggedIn = false;
 
         //list <User> users;
         //For testing
@@ -64,7 +64,7 @@ void LoginPage::on_loginButton_clicked()
         //check if username is registered
         for (const User& i : usersList) {
             if ((i.getLogin()).getUserName() == username.toStdString()) {
-                userExists = true;	//Validates credentials and assigns instance to correct user
+                userExists = true;
             }
         }
 
@@ -75,6 +75,7 @@ void LoginPage::on_loginButton_clicked()
                 if (i.getLogin() == enteredCreds) {
                     currentUser = i;	//Validates credentials and assigns instance to correct user
                     correctPassword = true;
+                    loggedIn = true;
                 }
             }
 
@@ -87,14 +88,12 @@ void LoginPage::on_loginButton_clicked()
             QMessageBox::information(this, "Login", "User doesn't exist!");
         }
 
-        if (!(currentUser == nullUser)) {
+        if (loggedIn == true) {
         //functionality available to user once logged in
             hide();
             findLocationMatches *matchesPage = new findLocationMatches();
             matchesPage->show();
         }
-
-
     }
 }
 
