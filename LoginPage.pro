@@ -17,7 +17,6 @@ SOURCES += \
     main.cpp \
     preferences.cpp \
     project.cpp \
-    preferences.cpp \
     signup.cpp \
     user.cpp
 
