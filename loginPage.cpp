@@ -1,4 +1,5 @@
 #include "loginPage.h"
+#include "findlocationmatches.h"
 #include <QMessageBox>
 #include "user.h"
 #include <QTimer>
@@ -28,7 +29,14 @@ LoginPage::~LoginPage()
     delete ui;
 }
 
-list <User> users;
+list<User> LoginPage::getLoginlist() {
+    return usersList;
+}
+
+void LoginPage::addToLoginInfoList(User user) {
+    usersList.push_back(user);
+}
+
 void LoginPage::on_loginButton_clicked()
 {
     QString username = ui->usernameInput->text();
@@ -46,14 +54,15 @@ void LoginPage::on_loginButton_clicked()
         bool userExists = false;
         bool correctPassword = false;
 
-        list <User> users;
+        //list <User> users;
         //For testing
         Login L1 = Login("Amy", "123"); Login L2 = Login("Tom", "abc");
-        User u1 = User(L1); User u2 = User(L2); users.push_back(u1); users.push_back(u2);
-
+        User u1 = User(L1); User u2 = User(L2); //users.push_back(u1); users.push_back(u2);
+        usersList.push_back(u1);
+        usersList.push_back(u2);
 
         //check if username is registered
-        for (const User& i : users) {
+        for (const User& i : usersList) {
             if ((i.getLogin()).getUserName() == username.toStdString()) {
                 userExists = true;	//Validates credentials and assigns instance to correct user
             }
@@ -62,7 +71,7 @@ void LoginPage::on_loginButton_clicked()
         //username exists
         if (userExists == true) {
             Login enteredCreds = Login(username.toStdString(), password.toStdString());
-            for (const User& i : users) {
+            for (const User& i : usersList) {
                 if (i.getLogin() == enteredCreds) {
                     currentUser = i;	//Validates credentials and assigns instance to correct user
                     correctPassword = true;
@@ -78,9 +87,12 @@ void LoginPage::on_loginButton_clicked()
             QMessageBox::information(this, "Login", "User doesn't exist!");
         }
 
-        //            while (!(currentUser == nullUser)) {
-        //                //functionality available to user once logged in
-        //            }
+        if (!(currentUser == nullUser)) {
+        //functionality available to user once logged in
+            hide();
+            findLocationMatches *matchesPage = new findLocationMatches();
+            matchesPage->show();
+        }
 
 
     }
@@ -89,7 +101,7 @@ void LoginPage::on_loginButton_clicked()
 void LoginPage::on_signupButton_clicked()
 {
     hide();
-    signupPage = new signup(this);
+    signup *signupPage = new signup(this);
     signupPage->show();
 }
 

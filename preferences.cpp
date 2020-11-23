@@ -1,7 +1,10 @@
+/*
 #include "preferences.h"
 #include "ui_preferences.h"
 #include "address.h"
 #include "location.h"
+#include "loginPage.h"
+#include "ui_loginPage.h"
 
 #include <QCheckBox>
 #include <QMessageBox>
@@ -18,7 +21,7 @@ Preferences::~Preferences()
     delete ui;
 }
 
-Preferences::savePreference()
+void Preferences::savePreference()
 {
     // get all prefences
     bool power = ui->powerCheck->isChecked();
@@ -29,7 +32,7 @@ Preferences::savePreference()
     int distance = ui->maxDistance->value();
 }
 
-Preferences::displayLocations()
+void Preferences::displayLocations()
 {
 
-}
+}*/

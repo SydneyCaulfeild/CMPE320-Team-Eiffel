@@ -1,10 +1,10 @@
+#include "loginPage.h"
 #include "signup.h"
 #include "ui_signup.h"
 #include "user.h"
 #include "login.h"
 #include "address.h"
 #include "location.h"
-#include "loginPage.h"
 #include <list>
 #include <algorithm>
 #include <QTimer>
@@ -32,7 +32,6 @@ signup::~signup()
     delete ui;
 }
 
-//list <User> users;
 
 void signup::on_createAccountButton_clicked()
 {
@@ -77,6 +76,9 @@ void signup::on_createAccountButton_clicked()
 
             //Move to the next page
             //.....
+            hide();
+            LoginPage *loginPage = new LoginPage(this);
+            loginPage->show();
         }
     }
 }

@@ -3,6 +3,7 @@
  */
 
 #include <iostream>
+#include <list>
 #include <string>
 #include <stdlib.h>
 #include <bits/stdc++.h>
@@ -80,3 +81,4 @@ bool Login::checkValidity(string enteredPassword)
 bool Login::equals(Login right) const{
     return ((this->password == right.getPassword()) && (this->userName == right.getUserName()));
 }
+

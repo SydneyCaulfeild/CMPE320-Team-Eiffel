@@ -19,8 +19,8 @@ public:
 	// constructors
 	User(); //null instance
 	User(Login loginCreds);
-	User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds);
-
+    User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds);
+    //User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance);
 	// accessors
 	int getVolume() const;
 	Address getCurrentLocation() const;
