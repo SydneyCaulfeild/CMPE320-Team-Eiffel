@@ -6,6 +6,7 @@
 #include "signup.h"
 #include "user.h"
 #include "ui_loginPage.h"
+extern list<User> usersList;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginPage; }
@@ -33,7 +34,7 @@ private slots:
 
 private:
     Ui::LoginPage *ui;
-    list<User> usersList;
+
 
 };
 #endif // LOGINPAGE_H

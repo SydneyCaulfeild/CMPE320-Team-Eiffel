@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include "user.h"
 #include <QTimer>
+list<User> usersList;
 
 LoginPage::LoginPage(QWidget *parent)
     : QMainWindow(parent)

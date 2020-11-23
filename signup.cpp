@@ -53,10 +53,9 @@ void signup::on_createAccountButton_clicked()
         else{
             newSignup.setPassword(password.toStdString());
             bool userExists = false;
-            list <User> users;
 
             //Check if the username exists
-            for (const User &i : users) {
+            for (const User &i : usersList) {
                 if ((i.getLogin()).getUserName() == username.toStdString()) {
                     userExists = true;
                 }
@@ -70,7 +69,7 @@ void signup::on_createAccountButton_clicked()
             else{
                 newSignup.setUserName(username.toStdString());
                 User u1 = User(newSignup);
-                users.push_back(u1);
+                usersList.push_back(u1);
 
                 //Move to the next page
                 //.....
