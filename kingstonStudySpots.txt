@@ -8,10 +8,10 @@ ARC	7	44.229883	-76.494269	indoor	true	true	false	45	37
 
 Team Room	5	44.228135	-76.492778	both	true	true	false	12	4
 
-NORTHSIDE espresso+kitchen             6               44.2326               76.4884            indoor          true             true          false             30              8
+NORTHSIDE espresso+kitchen	6	44.2326	76.4884	indoor	true	true	false	30	8
 
-Juniper Café 	  4    	44.2204  		 76.5057   	 both   	  true   	  true  	  false  	  25 	   6
+Juniper Café	4	44.2204	76.5057	both	true	true	false	25	6
 
-Geneva Crepe Bistro 	 7  	  44.2327 		  76.4889  	 both    	true   	 true  	    false  	  22   	  6
+Geneva Crepe Bistro	7	44.2327	76.4889	both	true	true	false	22	6
 
-The Yellow Deli  8   	 44.2377 		  76.5030  	 indoor 	    false      true   	    false   	 15     	 4
+The Yellow Deli	8	44.2377	76.5030	indoor	false	true	false	15	4

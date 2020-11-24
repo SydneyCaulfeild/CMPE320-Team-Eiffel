@@ -6,6 +6,14 @@
 #include "initialize.h"
 #include "loginPage.h"
 
+
+#include <QMessageBox>
+#include <QFile>
+#include <QObject>
+#include <QFileDialog>
+
+
+
 findLocationMatches::findLocationMatches(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::findLocationMatches)
@@ -112,17 +120,19 @@ void findLocationMatches::on_findMatches_clicked()
     Initialize initialize;
     list <Location> allLocations; //list of all locations
     list <Location> validLocations; //list of locations that meet the user specified criteria
-    string s = "/kingstonStudySpots.txt";
-    int n = s.length();
 
-        // declaring character array
-        char char_array[n + 1];
 
-        // copying the contents of the
-        // string to char array
-        strcpy(char_array, s.c_str());
+//    string s = "/kingstonStudySpots.txt";
+//    int n = s.length();
 
-    allLocations = initialize.createList(char_array); //return a list of all locations (reading data from input file)
+//        // declaring character array
+//        char char_array[n + 1];
+
+//        // copying the contents of the
+//        // string to char array
+//        strcpy(char_array, s.c_str());
+
+    allLocations = initialize.createList("./kingstonStudySpots.txt"); //return a list of all locations (reading data from input file)
     validLocations = createValidList(allLocations, currentUser); //return a list of all locations that meet the preference criteria
 
     if (validLocations.size() == 0) {
