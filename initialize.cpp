@@ -28,20 +28,11 @@ list<Location> Initialize::createList(QString fileName) {
     }
 
     else{
-
         QTextStream in(&file);
 
          while(!in.atEnd()){
-
-
              QString line = in.readLine();
              QStringList tokens = line.split("\t");
-
-
-//             cout << "H" << endl;
-//             cout << tokens.size() << endl;
-//              //cout << tokens.at(0).toStdString() << endl;
-
 
              locName = tokens.at(0).toStdString();
              volume = tokens.at(1).toInt();
@@ -68,12 +59,10 @@ list<Location> Initialize::createList(QString fileName) {
              else{
                  equipment = false;
              }
-
              maxCapacity = tokens.at(8).toInt();
              currentCapacity = tokens.at(9).toInt();
 
-
-
+             //Testing whether the datas are retrieved from txt file successfully
              cout << line.toStdString() <<endl;
              cout <<locName <<endl;
              cout << volume <<endl;
@@ -93,6 +82,8 @@ list<Location> Initialize::createList(QString fileName) {
     }
 
     listOfLocations.sort();
+    //Testing whether the locations in txt file are stored in the list
+    cout <<"Size of the list is: " <<listOfLocations.size() << endl;
     return listOfLocations;
     file.close();
 
