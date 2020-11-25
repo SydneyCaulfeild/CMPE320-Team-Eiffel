@@ -79,13 +79,14 @@ list<Location> Initialize::createList(QString fileName) {
              Location loc(volume, address, inOrOut, internet, power, equipment, maxCapacity, currentCapacity);
              listOfLocations.push_back(loc);
          }
+         file.close();
     }
 
     listOfLocations.sort();
     //Testing whether the locations in txt file are stored in the list
     cout <<"Size of the list is: " <<listOfLocations.size() << endl;
     return listOfLocations;
-    file.close();
+
 
 }
 
