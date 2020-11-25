@@ -132,7 +132,9 @@ void findLocationMatches::on_findMatches_clicked()
 //        // string to char array
 //        strcpy(char_array, s.c_str());
 
-    allLocations = initialize.createList("./kingstonStudySpots.txt"); //return a list of all locations (reading data from input file)
+
+    QString fileName = QFileDialog::getOpenFileName(this,tr("kingstonStudySpots"),"",tr("TXT(*.txt)"));
+    allLocations = initialize.createList(fileName); //return a list of all locations (reading data from input file)
     validLocations = createValidList(allLocations, currentUser); //return a list of all locations that meet the preference criteria
 
     if (validLocations.size() == 0) {
