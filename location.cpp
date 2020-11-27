@@ -145,18 +145,23 @@ bool Location::operator<(const Location& right)
 bool Location::checkPreferences(User user){
     //check all the boolean variables, statement is true if every variable matches
     if (user.getEquipment() == this->equipment
-        && user.getInOrOut() == this->inOrOut
-        && user.getInternet() == this->internet
-        && user.getPower() == this->power
+        && ((user.getInOrOut() == this->inOrOut) || user.getInOrOut() == "either")
+        && ((user.getInternet() == this->internet) || user.getInternet() == false)
+        && ((user.getPower() == this->power) || user.getPower() == false)
         && user.getVolume() >= this->volume
         && this->currentCapacity < this->maxCapacity)
     {
+        printf("Boolean Check Passed!");
         float temp = user.getCurrentLocation().calculateDistance(this->getLocation().getLongitude(), this->getLocation().getLatitude(),
                 user.getCurrentLocation().getLongitude(), user.getCurrentLocation().getLatitude()); 
-        if (temp <= user.getMaxDistance())
+        if (temp <= user.getMaxDistance()) {
+            printf("Distance check passed!");
             return true; // a location exists that meets requirements and is within a valid distance
-      
+      }
+        printf("Distance check failed");
         return false; //the location is too far
     }
+    printf("Boolean check failed");
     return false; //nothing meets the requirements
 }
+
