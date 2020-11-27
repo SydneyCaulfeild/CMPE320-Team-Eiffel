@@ -144,7 +144,7 @@ bool Location::operator<(const Location& right)
 // Check user preferences method, returns true if the study spot is valid to add to the list
 bool Location::checkPreferences(User user){
     //check all the boolean variables, statement is true if every variable matches
-    if (user.getEquipment() == this->equipment
+    if (((user.getEquipment() == this->equipment ) || user.getEquipment() == false)
         && ((user.getInOrOut() == this->inOrOut) || user.getInOrOut() == "either")
         && ((user.getInternet() == this->internet) || user.getInternet() == false)
         && ((user.getPower() == this->power) || user.getPower() == false)
@@ -164,4 +164,5 @@ bool Location::checkPreferences(User user){
     printf("Boolean check failed");
     return false; //nothing meets the requirements
 }
+
 
