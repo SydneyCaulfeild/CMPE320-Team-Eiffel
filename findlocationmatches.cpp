@@ -26,7 +26,6 @@ findLocationMatches::findLocationMatches(QWidget *parent) :
     ui->label_3->setFont(font);
     ui->label_4->setFont(font);
     ui->label_5->setFont(font);
-    ui->label_6->setFont(font);
     ui->label_7->setFont(font);
     ui->label_8->setFont(font);
     ui->label_9->setFont(font);
@@ -117,7 +116,7 @@ void findLocationMatches::on_findMatches_clicked()
 
     User currentUser(vol, userAddress, inOrOut, wifi, power, equipment, maxTravelDistance, Login("randomusername", "randompassword"));
 
-    Initialize initialize;
+    //Initialize initialize;
     list <Location> allLocations; //list of all locations
     list <Location> validLocations; //list of locations that meet the user specified criteria
 
@@ -132,9 +131,36 @@ void findLocationMatches::on_findMatches_clicked()
 //        // string to char array
 //        strcpy(char_array, s.c_str());
 
+    //Location testLocation(10, Address(1, 1, "TEST"), "inside", true, true, true, 10, 0);
+    Location loc1(7, Address(44.233392574879026, -76.49813532829286, "Victoria Park - Brock & Alfred"), "outside", false, false, false, 12, 0);
+    Location loc2(4, Address(44.230220, -76.481591, "Crave Coffee House - 166 Princess St"), "inside", true, true, false, 12, 0);
+    Location loc3(3, Address(44.230195, -76.484764, "Springer Market Square - 216 Ontario St"), "outdoor", false, false, false, 30, 5);
+    Location loc4(7, Address(44.229883, -76.494269, "Queen's ARC - 284 Earl St"), "inside", true, true, false, 45, 37);
+    Location loc5(5, Address(44.228135, -76.494265, "Tea Room - 45 Union St"), "inside", true, true, false, 12, 4);
+    Location loc6(8, Address(44.2377, -76.5030, "The Yellow Deli - 647 Princess St"), "inside", false, true, false, 15, 4);
+    Location loc7(1, Address(44.22888739806, -76.49625182588, "Stauffer Library - 101 Union St"), "inside", true, true, false, 100, 50);
+    Location loc8(5, Address(44.2964, -76.3149, "Grass Creek Park - 2993 Kingston 2"), "outside", false, false, false, 20, 5);
+    Location loc9(8, Address(44.2596, -76.5802, "Eggsquis Kingston - 2774 Princess St"), "inside", false, false, false, 35, 7);
+    Location loc10(6, Address(44.2324, -76.4886, "Melt & Grill - 292 Princess Street"), "inside", true, false, true, 10, 3);
+    Location loc11(7, Address(44.2305, -76.4807, "Casa Domenico - 35 Brock St"), "inside", true, false, false, 27, 6);
+    Location loc12(6, Address(44.2654, -76.5024, "Panera Bread - 88 Dalton Avenue"), "inside", true, true, false, 25, 6);
 
-    QString fileName = QFileDialog::getOpenFileName(this,tr("kingstonStudySpots"),"",tr("TXT(*.txt)"));
-    allLocations = initialize.createList(fileName); //return a list of all locations (reading data from input file)
+    //allLocations.push_back(testLocation);
+    allLocations.push_back(loc1);
+    allLocations.push_back(loc2);
+    allLocations.push_back(loc3);
+    allLocations.push_back(loc4);
+    allLocations.push_back(loc5);
+    allLocations.push_back(loc6);
+    allLocations.push_back(loc7);
+    allLocations.push_back(loc8);
+    allLocations.push_back(loc9);
+    allLocations.push_back(loc10);
+    allLocations.push_back(loc11);
+    allLocations.push_back(loc12);
+
+    //QString fileName = QFileDialog::getOpenFileName(this,tr("kingstonStudySpots"),"",tr("TXT(*.txt)"));
+    //allLocations = initialize.createList(fileName); //return a list of all locations (reading data from input file)
     validLocations = createValidList(allLocations, currentUser); //return a list of all locations that meet the preference criteria
 
     if (validLocations.size() == 0) {
@@ -157,3 +183,4 @@ void findLocationMatches::on_logout_clicked()
     LoginPage *loginPage = new LoginPage(this);
     loginPage->show();
 }
+
