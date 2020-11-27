@@ -461,8 +461,8 @@
   <widget class="QComboBox" name="volumeLevel">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>70</y>
+     <x>520</x>
+     <y>60</y>
      <width>71</width>
      <height>51</height>
     </rect>
@@ -473,7 +473,7 @@
     <rect>
      <x>410</x>
      <y>20</y>
-     <width>421</width>
+     <width>261</width>
      <height>31</height>
     </rect>
    </property>
@@ -484,11 +484,17 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>370</x>
      <y>80</y>
-     <width>311</width>
+     <width>151</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>151</width>
+     <height>0</height>
+    </size>
    </property>
    <property name="text">
     <string>Volume (1 is silence, 10 is loud):</string>
@@ -497,11 +503,17 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>160</y>
-     <width>211</width>
+     <x>410</x>
+     <y>120</y>
+     <width>101</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>101</width>
+     <height>0</height>
+    </size>
    </property>
    <property name="text">
     <string>Max distance (in km):</string>
@@ -510,21 +522,27 @@
   <widget class="QComboBox" name="InOrOut">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>230</y>
-     <width>121</width>
-     <height>51</height>
+     <x>520</x>
+     <y>150</y>
+     <width>81</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>240</y>
-     <width>281</width>
+     <x>390</x>
+     <y>150</y>
+     <width>121</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>121</width>
+     <height>0</height>
+    </size>
    </property>
    <property name="text">
     <string>Indoor, outdoor, or either:</string>
@@ -533,22 +551,28 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>320</y>
-     <width>421</width>
+     <x>450</x>
+     <y>190</y>
+     <width>141</width>
      <height>16</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>141</width>
+     <height>0</height>
+    </size>
+   </property>
    <property name="text">
-    <string>Please select what other accomodations you need:</string>
+    <string>What else are you looking for?</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="wifi">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>390</y>
-     <width>72</width>
+     <x>440</x>
+     <y>220</y>
+     <width>51</width>
      <height>20</height>
     </rect>
    </property>
@@ -559,9 +583,9 @@
   <widget class="QCheckBox" name="power">
    <property name="geometry">
     <rect>
-     <x>500</x>
-     <y>390</y>
-     <width>131</width>
+     <x>490</x>
+     <y>220</y>
+     <width>91</width>
      <height>20</height>
     </rect>
    </property>
@@ -572,9 +596,9 @@
   <widget class="QCheckBox" name="equipment">
    <property name="geometry">
     <rect>
-     <x>650</x>
-     <y>390</y>
-     <width>171</width>
+     <x>580</x>
+     <y>220</y>
+     <width>81</width>
      <height>20</height>
     </rect>
    </property>
@@ -585,35 +609,22 @@
   <widget class="QPushButton" name="findMatches">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>570</y>
+     <x>540</x>
+     <y>330</y>
      <width>171</width>
-     <height>61</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Find my matches</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>450</y>
-     <width>231</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Please enter your current location:</string>
+    <string>Display Matches!</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>520</y>
-     <width>131</width>
+     <x>400</x>
+     <y>270</y>
+     <width>61</width>
      <height>20</height>
     </rect>
    </property>
@@ -624,8 +635,8 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>406</x>
-     <y>520</y>
+     <x>400</x>
+     <y>290</y>
      <width>101</width>
      <height>20</height>
     </rect>
@@ -637,9 +648,9 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>520</y>
-     <width>111</width>
+     <x>600</x>
+     <y>280</y>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>
@@ -650,8 +661,8 @@
   <widget class="QLineEdit" name="addressName">
    <property name="geometry">
     <rect>
-     <x>830</x>
-     <y>520</y>
+     <x>670</x>
+     <y>280</y>
      <width>113</width>
      <height>21</height>
     </rect>
@@ -660,8 +671,8 @@
   <widget class="QLineEdit" name="longitude">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>520</y>
+     <x>470</x>
+     <y>270</y>
      <width>113</width>
      <height>21</height>
     </rect>
@@ -670,8 +681,8 @@
   <widget class="QLineEdit" name="latitude">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>520</y>
+     <x>470</x>
+     <y>290</y>
      <width>113</width>
      <height>21</height>
     </rect>
@@ -680,9 +691,9 @@
   <widget class="QLineEdit" name="maxDistance">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>160</y>
-     <width>113</width>
+     <x>520</x>
+     <y>120</y>
+     <width>71</width>
      <height>21</height>
     </rect>
    </property>
@@ -690,10 +701,10 @@
   <widget class="QPushButton" name="closeProgram">
    <property name="geometry">
     <rect>
-     <x>390</x>
-     <y>900</y>
+     <x>490</x>
+     <y>860</y>
      <width>141</width>
-     <height>61</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -703,24 +714,37 @@
   <widget class="QTextBrowser" name="output">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>670</y>
-     <width>256</width>
-     <height>192</height>
+     <x>380</x>
+     <y>350</y>
+     <width>461</width>
+     <height>481</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="logout">
    <property name="geometry">
     <rect>
-     <x>600</x>
-     <y>900</y>
+     <x>660</x>
+     <y>860</y>
      <width>131</width>
-     <height>61</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>Logout</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>250</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Where are you right now?</string>
    </property>
   </widget>
  </widget>
@@ -758,3 +782,4 @@
   </connection>
  </connections>
 </ui>
+
