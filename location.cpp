@@ -149,11 +149,13 @@ bool Location::checkPreferences(User user){
         && user.getInternet() == this->internet
         && user.getPower() == this->power
         && user.getVolume() >= this->volume
-        && this->currentCapacity < this->maxCapacity) {
+        && this->currentCapacity < this->maxCapacity)
+    {
         float temp = user.getCurrentLocation().calculateDistance(this->getLocation().getLongitude(), this->getLocation().getLatitude(),
-                user.getCurrentLocation().getLongitude(), user.getCurrentLocation().getLatitude()); //this function must be overloaded to the address class
+                user.getCurrentLocation().getLongitude(), user.getCurrentLocation().getLatitude()); 
         if (temp <= user.getMaxDistance())
             return true; // a location exists that meets requirements and is within a valid distance
+      
         return false; //the location is too far
     }
     return false; //nothing meets the requirements
