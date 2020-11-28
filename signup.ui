@@ -81,6 +81,9 @@
       <height>31</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="newPassword">
     <property name="geometry">
@@ -90,6 +93,9 @@
       <width>201</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="createAccountButton">

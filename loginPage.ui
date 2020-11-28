@@ -115,6 +115,9 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="passwordInput">
      <property name="geometry">
@@ -131,6 +134,9 @@
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;</string>
      </property>
     </widget>
     <widget class="QPushButton" name="signupButton">
@@ -156,9 +162,9 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>120</x>
        <y>350</y>
-       <width>131</width>
+       <width>151</width>
        <height>41</height>
       </rect>
      </property>
@@ -219,7 +225,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

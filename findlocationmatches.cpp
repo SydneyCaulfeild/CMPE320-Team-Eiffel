@@ -20,7 +20,7 @@ findLocationMatches::findLocationMatches(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QFont font("Times New Roman", 11, 75);
+    QFont font("Helvetica", 11, 75);
     ui->label->setFont(font);
     ui->label_2->setFont(font);
     ui->label_3->setFont(font);
@@ -29,6 +29,7 @@ findLocationMatches::findLocationMatches(QWidget *parent) :
     ui->label_7->setFont(font);
     ui->label_8->setFont(font);
     ui->label_9->setFont(font);
+    ui->label_10->setFont(font);
     ui->wifi->setFont(font);
     ui->power->setFont(font);
     ui->equipment->setFont(font);
