@@ -3,6 +3,7 @@
  */
 
 #include <iostream>
+#include <list>
 #include <string>
 #include <stdlib.h>
 #include <bits/stdc++.h>
@@ -20,64 +21,64 @@ Login :: Login(const string& userName, const string& password) : userName(userNa
 
 //Accessors
 string Login::getUserName()const {
-	return userName;
+    return userName;
 }
 string Login::getPassword()const {
-	return password;
+    return password;
 }
 
 //Mutator
 void Login :: setUserName(string newUserName){
-	userName = newUserName;
+    userName = newUserName;
 }
 
 void Login :: setPassword(string newPassword){
-	password = newPassword;
+    password = newPassword;
 }
 
 bool Login::checkValidity(string enteredPassword)
 {
-	bool length = false, digit = false, upperCase = false, lowerCase = false, valid = false;
+    bool length = false, digit = false, upperCase = false, lowerCase = false, valid = false;
 
-	if (enteredPassword.length() >= 7) {
-		length = true;
-	}
+    if (enteredPassword.length() >= 7) {
+        length = true;
+    }
 
-	char password[enteredPassword.length()];
-	strcpy(password, enteredPassword.c_str());
-	for (int i = 0; i < enteredPassword.length(); i++) {
-		char c = password[i];
-		if (!digit && isdigit(c)) {
-			digit = true;
-			continue;
-		}
+    char password[enteredPassword.length()];
+    strcpy(password, enteredPassword.c_str());
+    for (int i = 0; i < enteredPassword.length(); i++) {
+        char c = password[i];
+        if (!digit && isdigit(c)) {
+            digit = true;
+            continue;
+        }
 
-		if (!upperCase && isupper(c)) {
-			upperCase = true;
-			continue;
-		}
+        if (!upperCase && isupper(c)) {
+            upperCase = true;
+            continue;
+        }
 
-		if (!lowerCase && islower(c)) {
-			lowerCase = true;
-			continue;
-		}
-	}
+        if (!lowerCase && islower(c)) {
+            lowerCase = true;
+            continue;
+        }
+    }
 
-	cout << "Password Length : " << (length ? "Long Enough" : "Too Short") << endl;
-	cout << "Password contains digit? : " << (digit ? "Yes" : "No") << endl;
-	cout << "Password contains upper case? : " << (upperCase ? "Yes" : "No") << endl;
-	cout << "Password contains lower case? : " << (lowerCase ? "Yes" : "No") << endl;
+    cout << "Password Length : " << (length ? "Long Enough" : "Too Short") << endl;
+    cout << "Password contains digit? : " << (digit ? "Yes" : "No") << endl;
+    cout << "Password contains upper case? : " << (upperCase ? "Yes" : "No") << endl;
+    cout << "Password contains lower case? : " << (lowerCase ? "Yes" : "No") << endl;
 
-	if(length == true && digit == true && upperCase == true && lowerCase == true) {
-		valid = true;
-		cout << "Password is valid? : " << (valid ? "Yes" : "No") << endl;
-		return true;
-	} else {
-		cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;
-		return false;
-	}
+    if(length == true && digit == true && upperCase == true && lowerCase == true) {
+        valid = true;
+        cout << "Password is valid? : " << (valid ? "Yes" : "No") << endl;
+        return true;
+    } else {
+        cout << "Password is valid ? : " << (valid ? "Yes" : "No") << endl;
+        return false;
+    }
 }
 bool Login::equals(Login right) const{
-	return ((this->password == right.getPassword()) && (this->userName == right.getUserName()));
+    return ((this->password == right.getPassword()) && (this->userName == right.getUserName()));
 }
 

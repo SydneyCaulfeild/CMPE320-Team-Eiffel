@@ -19,18 +19,18 @@ public:
 	// constructors
 	User(); //null instance
 	User(Login loginCreds);
-	User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds);
-
+    User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance, Login loginCreds);
+    //User(int volume, Address currentLocation, string inOrOut, bool internet, bool power, bool equipment, double maxTravelDistance);
 	// accessors
-	int getVolume();
-	Address getCurrentLocation();
-	bool getInternet();
-	bool getPower();
-	bool getEquipment();
-	string getInOrOut();
-	double getMaxDistance();
+	int getVolume() const;
+	Address getCurrentLocation() const;
+	bool getInternet() const;
+	bool getPower() const;
+	bool getEquipment() const;
+	string getInOrOut() const;
+	double getMaxDistance() const;
 	Login getLogin() const;
-	Address getCurrentStudySpot();
+	Address getCurrentStudySpot() const;
 
 	// mutators
 	void setVolume(int volume);
@@ -57,5 +57,4 @@ private:
 	Address currentStudySpot;
 };
 
-bool operator==(User left, User right);
-bool operator!=(const User&left, const User& right);
+bool operator==(const User& left, const User& right);

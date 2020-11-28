@@ -1,9 +1,9 @@
 #include <list>
-#include <string>
+#include <QString>
 
 #include "location.h"
 
 class Initialize {
 public:
-	list<Location> createList(char filePath[]);
+    list<Location> createList(QString fileName);
 };
