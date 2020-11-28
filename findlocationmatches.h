@@ -22,6 +22,8 @@ private slots:
 
     void on_logout_clicked();
 
+    void changeOccur();
+
 private:
     Ui::findLocationMatches *ui;
 };
