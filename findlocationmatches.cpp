@@ -50,6 +50,17 @@ findLocationMatches::findLocationMatches(QWidget *parent) :
         ui->volumeLevel->addItem(s);
     }
 
+    //Clear the display box when the preferences are changed
+    connect(ui->wifi, SIGNAL(stateChanged(int)), this, SLOT(changeOccur()));
+    connect(ui->power,SIGNAL(stateChanged(int)), this, SLOT(changeOccur()));
+    connect(ui->equipment,SIGNAL(stateChanged(int)), this, SLOT(changeOccur()));
+    connect(ui->volumeLevel,SIGNAL(currentIndexChanged(int)), this, SLOT(changeOccur()));
+    connect(ui->InOrOut,SIGNAL(currentIndexChanged(int)), this, SLOT(changeOccur()));
+    connect(ui->maxDistance,SIGNAL(textChanged(QString)), this, SLOT(changeOccur()));
+    connect(ui->latitude,SIGNAL(textChanged(QString)), this, SLOT(changeOccur()));
+    connect(ui->longitude,SIGNAL(textChanged(QString)), this, SLOT(changeOccur()));
+    connect(ui->addressName,SIGNAL(textChanged(QString)), this, SLOT(changeOccur()));
+
 }
 
 findLocationMatches::~findLocationMatches()
@@ -183,6 +194,10 @@ void findLocationMatches::on_logout_clicked()
     hide();
     LoginPage *loginPage = new LoginPage(this);
     loginPage->show();
+}
+
+void findLocationMatches::changeOccur(){
+    ui->output->setText(" ");
 }
 
 
