@@ -5,8 +5,6 @@
 #include "address.h"
 #include "initialize.h"
 #include "loginPage.h"
-
-
 #include <QMessageBox>
 #include <QFile>
 #include <QObject>
@@ -132,17 +130,6 @@ void findLocationMatches::on_findMatches_clicked()
     list <Location> allLocations; //list of all locations
     list <Location> validLocations; //list of locations that meet the user specified criteria
 
-
-//    string s = "/kingstonStudySpots.txt";
-//    int n = s.length();
-
-//        // declaring character array
-//        char char_array[n + 1];
-
-//        // copying the contents of the
-//        // string to char array
-//        strcpy(char_array, s.c_str());
-
     //Location testLocation(10, Address(1, 1, "TEST"), "inside", true, true, true, 10, 0);
     Location loc1(7, Address(44.233392574879026, -76.49813532829286, "Victoria Park - Brock & Alfred"), "outside", false, false, false, 12, 0);
     Location loc2(4, Address(44.230220, -76.481591, "Crave Coffee House - 166 Princess St"), "inside", true, true, false, 12, 0);
@@ -171,8 +158,6 @@ void findLocationMatches::on_findMatches_clicked()
     allLocations.push_back(loc11);
     allLocations.push_back(loc12);
 
-    //QString fileName = QFileDialog::getOpenFileName(this,tr("kingstonStudySpots"),"",tr("TXT(*.txt)"));
-    //allLocations = initialize.createList(fileName); //return a list of all locations (reading data from input file)
     validLocations = createValidList(allLocations, currentUser); //return a list of all locations that meet the preference criteria
 
     if (validLocations.size() == 0) {
